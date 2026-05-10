@@ -1,0 +1,530 @@
+/* Fonts */
+@font-face {
+    font-family: "anona";
+    src: url(fonts/Anona.otf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "valeson";
+    src: url(fonts/valeson-w05-ext-bold.otf) format("truetype");
+  }
+
+  /* General Page Styling */
+
+  /* notes for self 
+  1rem = 16px
+  1vh = 9.64px */
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    /* makes it so when you click on a link it doesnt just jump to it */
+    scroll-behavior: smooth;
+  }
+
+  header {
+    width: 100%;
+    z-index: 5;
+    background: rgba(246, 205, 211);
+  }
+
+   header .navbar{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+   }
+   
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .sec-content{
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1300px ;
+  }
+
+  .sec-title{
+    text-align:center ;
+    padding: 60px 0 100px;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-family: "valeson";
+    color: rgba(114, 14, 41);
+  }
+  
+  /* ::first-letter is a pseudo-element that like its name suggests, alters the first letter 
+  text, ill be using it here to make the text bold and a different color*/
+  .sec-title::first-letter{
+    font-weight: bold;
+    color: rgba(79, 9, 26) ;
+  }
+
+  /* ::after is a pseudo-element that adds content after the content of the element without 
+  altering any of the html, for example i can add text here without writing it in the html*/
+  /* but ill just use it here to add some decoration */
+  .sec-title::after{
+    content: "";
+    width: 80px;
+    height: 5px;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 10px;
+    background-color:rgba(246, 205, 211);
+  }
+
+  .navbar .navlogo .logo{
+    width: 170px;
+    height: 100px;
+    position: relative;
+    left: 40px;
+    
+  }
+
+  .navbar .navmenu{
+    display: flex;
+    gap: 10px;
+  }
+
+  .navbar .navmenu .navlink {
+    padding: 10px 18px;
+    font-size: 1.25rem;
+    color: rgba(114, 14, 41);
+    border-radius: 50px;
+    font-weight:600;
+    font-family: "anona";
+    /* makes the hover more smoother and less instant */
+    transition: 0.3s ease;
+  }
+
+  .navbar .navmenu .navlink:hover {
+    color: white;
+    background-color:rgba(114, 14, 41) ;
+    text-shadow: 1rem;
+  }
+
+  /* Hero section (the first part of the website you see with the banner) */
+
+  .hero-sec {
+    min-height: 100vh;
+    background: rgba(246, 205, 211);
+  }
+
+  .hero-sec .sec-content{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    color: rgba(114, 14, 41) ;
+    justify-content: space-between;
+    font-family: "valeson" ;
+  }
+
+  .hero-sec .hero-info .title {
+   font-size: 2.4rem;
+   color: rgba(79, 9, 26) ;
+   font-family: "valeson";
+  }
+
+  .hero-sec .sec-content .subtitle {
+    margin-top: 8px;
+    max-width: 70%;
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgba(79, 9, 26);
+  }
+
+  .hero-sec .hero-info .description {
+    max-width: 70%;
+    margin: 24px 0 40px;
+    font-size: 1.5rem;
+  }
+
+  .hero-sec .hero-info .button{
+    padding: 10px 26px;
+    color: rgba(114, 14, 41);
+    border: 2px solid;
+    border-radius: 30px;
+    border-color: rgba(114, 14, 41);
+    background: transparent;
+    transition: 0.3s ease;
+  }
+
+  .hero-sec .hero-info .button:hover {
+    background: rgba(114, 14, 41);
+    color: white;
+  }
+
+  .hero-sec .banner {
+    max-width: 500px;
+    margin-right: 5px;
+  }
+
+  /* Menu section */
+
+  .menu-sec {
+    color: white;
+    background-color: rgba(114, 14, 41);
+    padding: 50px 0 100px;
+  }
+
+  .menu-sec .sec-title {
+    color: white;
+  }
+
+  .menu-sec .sec-title::first-letter {
+    color: rgba(246, 205, 211);
+  }
+
+  .menu-sec .menu-list {
+    columns: 3;      
+    column-gap: 40px;   
+    column-rule: 2px dotted rgba(246, 205, 211);   
+  }
+
+  .menu-sec .menu-list .menu-item {
+    display: inline-block;     
+    width: 100%;               
+    margin-bottom: 40px;       
+    break-inside: avoid;     
+    text-align: center;
+  }
+
+  .menu-sec .menu-list .menu-item .menu-img {
+    max-width: 55%;
+    aspect-ratio: 1;
+    border-radius: 100px;
+    margin-bottom: 15px;
+    
+  }
+
+  .menu-sec .menu-list .menu-item .name {
+    margin: 12px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: "valeson";
+  }
+
+  .menu-sec .menu-list .menu-item .text {
+    font-family: "anona";
+    font-size: 1.05rem;
+  }
+
+  .menu-sec .menu-list .shop-button{
+    padding: 10px 26px;
+    margin: 8px;
+    color: rgba(114, 14, 41);
+    border: 2px solid;
+    border-radius: 30px;
+    border-color: rgba(246, 205, 211);
+    background: rgba(246, 205, 211);
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: "anona";
+    transition: 0.3s ease;
+    
+  }
+
+  .menu-sec .menu-list .shop-button:hover {
+    background: transparent;
+    color: rgba(246, 205, 211);
+    border-color: rgba(246, 205, 211);
+  }
+
+  /* About Us section */
+
+  .about-sec {
+    padding: 120px 0;
+    background: white;
+  }
+
+  .about-sec .sec-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .about-sec .about-banner .about-fig {
+    color:rgba(114, 14, 41);
+    font-family: "anona";
+    font-style: italic;
+    padding: 2px;
+    text-align: center;
+  }
+
+  .about-sec .about-banner .about-image {
+    width: 280px;
+    height: 480px;
+    object-fit:cover;
+    border-radius: 10px;
+  }
+  
+  
+  .about-sec .about-info {
+    max-width: 78%;
+  }
+
+  .about-sec .about-info .sec-title {
+    padding: 0;
+  }
+
+  .about-sec .about-info .text{
+    line-height: 30px;
+    margin: 50px 0 30px;
+    text-align: center;
+    font-family: "anona";
+    font-size: 1.2rem;
+    color: rgba(114, 14, 41);
+  }
+
+  .about-sec .social-media {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+  }
+
+  .about-sec .social-media .social-links {
+    color: rgba(114, 14, 41);
+    font-size: 1.5rem;
+    transition: 0.3s ease;
+  }
+
+  .about-sec .social-media .social-links:hover {
+    color: rgba(246, 205, 211);
+  }
+
+  .about-sec  .about-detail {
+     line-height: 10px;
+    margin: 20px 0 20px;
+    text-align: center;
+    font-family: "anona";
+    font-size: 1.2rem;
+    color: rgba(114, 14, 41);
+    transition: 0.3s ease;
+  }
+
+  .about-sec  .about-detail:hover {
+    cursor: pointer;
+    color: rgba(246, 205, 211);
+  }
+
+  /* Media section */
+
+  .media-sec {
+    padding: 50px 0 100px;
+    text-align: center
+  }
+
+  .media-sec .media-list {
+    column-count: 3;
+    column-gap: 40px;
+    column-rule: 2px dotted rgba(246, 205, 211);
+    text-align: center;
+  }
+
+  .media-sec .media-list .media-item {
+    break-inside: avoid;  
+    margin-bottom: 20px;
+  }
+
+  .media-sec .media-item video {
+    width: 100%;        
+    max-width: 350px; 
+    border: 30px solid rgba(114, 14, 41);
+    border-radius: 12px;
+
+  }
+ 
+
+
+  /* Contact Us section */
+
+  .contact-sec{
+    padding: 50px 0 100px;
+  }
+
+  .contact-sec .sec-content{
+    display: flex;
+    gap:48px;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  
+
+  .contact-sec .contact-infolist .contact-info {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    align-items: center;
+    font-family: "anona";
+    color: rgba(114, 14, 41);
+  }
+
+  .contact-sec .contact-form {
+    margin-right: 370px;
+
+  }
+
+  .contact-sec .contact-infolist .contact-info i{
+    font-size: 1rem;
+  }
+
+  .contact-sec .contact-form .form-input{
+    width: 300%;
+    height: 50px;
+    padding: 0 12px;
+    outline: none;
+    margin-bottom:10px ;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid rgba(246, 205, 211);
+  }
+
+  .contact-sec .contact-form .form-input:focus {
+    border-color: rgba(114, 14, 41);
+  }
+
+  .contact-sec .contact-form textarea.form-input {
+    height: 100px;
+    padding: 12px;
+    resize: none;
+  }
+
+  .contact-sec .contact-form .submit-button {
+    padding: 10px 26px;
+    margin-top: 10px;
+    color: white;
+    background-color: rgba(114, 14, 41);
+    border-radius: 20px;
+    font-weight: 600;
+    border: 2px solid rgba(114, 14, 41);
+    font-family: "anona";
+    transition: 0.3s ease;
+  }
+
+  .contact-sec .contact-form .submit-button:hover{
+    background: transparent;
+    border-color: rgba(246, 205, 211);
+    color: rgba(246, 205, 211);
+  }
+
+  .contact-sec .contact-form .error {
+    color: red;
+    font-size: 0.5rem;
+    margin-left: 5px;
+    font-family: "anona";
+  }
+
+  /* Quiz section */
+
+  .quiz-form {
+  max-width: 500px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  font-family: "valeson";
+  text-align: center;
+  color: rgba(114, 14, 41);
+}
+
+.quiz-form .option {
+  display: block;
+  margin:8px auto ;
+  padding: 20px;
+  width: 80%;
+  border: 3px dotted rgba(114, 14, 41);
+  border-radius: 10px;
+  cursor: pointer;
+  background: rgba(114, 14, 41);
+  color: white;
+  font-family: "anona";
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.quiz-form .option:hover {
+  background: transparent;
+  border-color: rgba(114, 14, 41);
+  color: rgba(114, 14, 41);
+}
+
+.quiz-form .submit-button {
+    padding: 10px 26px;
+    margin-top: 10px;
+    color: white;
+    background-color: rgba(79, 9, 26);
+    border-radius: 20px;
+    font-weight: 600;
+    border: 2px dotted rgba(114, 14, 41);
+    font-family: "anona";
+    transition: 0.3s ease;
+  }
+
+  .quiz-form .submit-button:hover{
+    background: transparent;
+    border-color: rgba(246, 205, 211);
+    color: rgba(246, 205, 211);
+  }
+
+.quiz-form .feedback {
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+  /* Footer section */
+
+  .foot-sec {
+    padding: 20px 0;
+    background: rgba(246, 205, 211);
+  }
+
+  .foot-sec .sec-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "anona";
+    color:rgba(114, 14, 41) ;
+  }
+
+  .foot-sec .social-media {
+    display: flex;
+    gap: 25px;
+  }
+
+  .foot-sec .social-media .social-links {
+    color:rgba(114, 14, 41) ;
+    font-size: 1.5rem;
+  }
+
+  .foot-sec .social-media .social-links:hover {
+    color: rgba(79, 9, 26);
+  }
+  
+
+
+
+
+  /* I am so tired */
+
